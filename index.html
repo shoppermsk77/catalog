@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Шопперы оптом | Каталог</title>
+    <title>ШОППЕРЫ ОПТОМ /// Y2K VISTA EDITION</title>
     <style>
         * {
             margin: 0;
@@ -12,237 +12,273 @@
         }
 
         body {
-            background: linear-gradient(145deg, #bcd9e6 0%, #8fb8cf 50%, #aacce0 100%);
-            font-family: 'Segoe UI', 'Frutiger', 'Arial', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-            color: #1a2f3c;
+            background: radial-gradient(circle at 10% 20%, #0b4b5c, #04323f, #021f28);
+            font-family: 'Segoe UI', 'Tahoma', 'Verdana', 'Frutiger', 'Arial', sans-serif;
+            color: #eef5ff;
             line-height: 1.4;
             min-height: 100vh;
             position: relative;
         }
 
-        /* шейдер — мягкие размытые блики */
+        /* множественные шейдеры + глянец */
         body::before {
             content: '';
             position: fixed;
-            top: -20%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 30%, rgba(80, 210, 255, 0.2) 0%, rgba(0, 40, 55, 0.5) 70%),
+                        repeating-linear-gradient(45deg, rgba(255,255,240,0.02) 0px, rgba(255,255,240,0.02) 2px, transparent 2px, transparent 8px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* эффект блика как в Vista */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
             left: -20%;
             width: 140%;
             height: 140%;
-            background: radial-gradient(circle at 30% 40%, rgba(255,255,245,0.25) 0%, rgba(210,235,245,0.1) 60%, transparent 80%);
+            background: radial-gradient(circle at 70% 20%, rgba(255,255,245,0.25) 0%, rgba(150,220,255,0.08) 50%, transparent 80%);
             pointer-events: none;
             z-index: 0;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
             position: relative;
             z-index: 2;
         }
 
-        /* стеклянные элементы */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(8px);
-            border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+        /* стекло Vista */
+        .vista-glass {
+            background: rgba(20, 50, 65, 0.55);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.5);
         }
 
-        /* хедер с контактами */
+        /* топ-бар Y2K */
         .top-bar {
             display: flex;
             justify-content: flex-end;
-            gap: 1.8rem;
-            padding: 1rem 0;
+            gap: 1.2rem;
+            padding: 0.8rem 0;
             margin-bottom: 1rem;
-            flex-wrap: wrap;
-            border-bottom: 1px solid rgba(255,255,255,0.5);
+            border-bottom: 1px solid rgba(80, 200, 240, 0.6);
         }
         .top-bar a {
-            color: #1a3a44;
+            color: #c3f0ff;
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            background: rgba(255,255,240,0.4);
-            padding: 0.3rem 1rem;
+            font-weight: bold;
+            text-shadow: 0 1px 1px #003344;
+            background: rgba(0, 30, 40, 0.6);
+            padding: 0.3rem 1.2rem;
             border-radius: 40px;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(5px);
+            letter-spacing: 0.5px;
         }
         .top-bar a:hover {
-            background: rgba(255,255,255,0.7);
+            background: rgba(0, 180, 220, 0.7);
+            color: white;
+            box-shadow: 0 0 8px #00ccff;
         }
 
         h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            letter-spacing: -0.5px;
-            margin: 1.5rem 0 0.5rem;
-            background: linear-gradient(135deg, #1c4e5e, #2b6f7a);
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #c0f0ff, #5bc0ff, #0099cc);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-shadow: 0 0 12px rgba(0,160,210,0.5);
+            margin-bottom: 0.2rem;
         }
 
         h2 {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin: 2rem 0 1.2rem 0;
-            color: #174550;
-            letter-spacing: -0.2px;
-            padding-left: 0.8rem;
-            border-left: 4px solid rgba(50,130,140,0.8);
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 2.2rem 0 1.2rem 0;
+            color: #b3f0ff;
+            text-shadow: 0 2px 4px #002a38;
+            border-left: 6px solid #2cc0ff;
+            padding-left: 1rem;
+            letter-spacing: -0.3px;
         }
 
         /* сетка каталога 3:4 */
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.6rem;
-            margin: 1.8rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(6px);
+            background: rgba(12, 45, 58, 0.65);
+            backdrop-filter: blur(12px);
             border-radius: 28px;
-            padding: 1rem;
-            border: 1px solid rgba(255,255,245,0.7);
-            transition: all 0.2s ease;
+            padding: 1.2rem;
+            border: 1px solid rgba(80, 210, 255, 0.5);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.25s ease;
         }
         .product-card:hover {
-            background: rgba(255, 255, 255, 0.6);
-            transform: translateY(-3px);
+            transform: translateY(-6px) scale(1.01);
+            background: rgba(20, 70, 85, 0.75);
+            border-color: #6ad4ff;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.4), 0 0 15px rgba(0,180,255,0.3);
         }
 
         .photo-placeholder {
-            background: rgba(210, 230, 240, 0.5);
+            background: linear-gradient(145deg, #1d6f85, #0a4b5c);
             aspect-ratio: 3 / 4;
             width: 100%;
             border-radius: 20px;
-            margin-bottom: 0.9rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #3f7180;
-            font-size: 0.7rem;
-            border: 1px solid rgba(255,255,245,0.8);
+            color: #b3f5ff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: 1px solid rgba(100, 220, 255, 0.6);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .product-name {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #153e48;
-            margin-bottom: 0.2rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #e2fcff;
+            text-shadow: 0 1px 1px #00242e;
+            letter-spacing: -0.3px;
         }
         .product-desc {
-            font-size: 0.65rem;
-            color: #2b5b68;
-            margin-bottom: 0.6rem;
+            font-size: 0.7rem;
+            color: #ade4f0;
+            margin-bottom: 0.7rem;
         }
         .prices {
             font-size: 0.7rem;
-            border-top: 1px solid rgba(100,140,150,0.3);
+            border-top: 1px solid rgba(80, 180, 210, 0.6);
             padding-top: 0.6rem;
-            margin-top: 0.3rem;
+            margin-top: 0.4rem;
         }
         .price-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
         }
 
-        /* сетка брендирования 1:1 — 16 ячеек */
+        /* 16 ячеек брендирования 1:1 */
         .brand-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 1.2rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
         .brand-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(4px);
-            border-radius: 20px;
-            padding: 0.8rem;
+            background: rgba(0, 45, 58, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1rem;
             text-align: center;
-            border: 1px solid rgba(255,255,245,0.7);
+            border: 1px solid rgba(0, 200, 240, 0.5);
+            transition: 0.2s;
+        }
+        .brand-card:hover {
+            background: rgba(30, 100, 120, 0.7);
+            border-color: #5ac8ff;
+            box-shadow: 0 0 12px #00a6cc;
         }
         .brand-placeholder {
-            background: rgba(190, 215, 225, 0.5);
+            background: radial-gradient(circle at 30% 20%, #2388a0, #0a5068);
             aspect-ratio: 1 / 1;
             width: 100%;
-            border-radius: 16px;
-            margin-bottom: 0.6rem;
+            border-radius: 20px;
+            margin-bottom: 0.7rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #2c6a78;
-            font-size: 0.65rem;
+            color: #d5f5ff;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border: 1px solid rgba(100, 210, 250, 0.7);
         }
         .brand-title {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #174550;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #c0ecff;
         }
 
-        /* таблицы — прозрачный стиль */
-        .table-wrap {
-            background: rgba(255,255,250,0.35);
-            backdrop-filter: blur(5px);
+        /* таблицы с виста-эффектом */
+        .vista-table {
+            background: rgba(5, 45, 58, 0.65);
+            backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 1rem;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
             overflow-x: auto;
-            border: 1px solid rgba(255,255,240,0.6);
+            border: 1px solid rgba(0, 200, 240, 0.5);
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
         th, td {
-            border-bottom: 1px solid rgba(80,110,120,0.3);
-            padding: 0.7rem 0.5rem;
+            border-bottom: 1px solid rgba(70, 180, 210, 0.5);
+            padding: 0.8rem 0.5rem;
             text-align: left;
+            color: #eafaff;
         }
         th {
-            color: #0f3f48;
-            font-weight: 600;
+            color: #9eeeff;
+            font-weight: 700;
+            background: rgba(0, 100, 120, 0.3);
         }
 
         /* контакты внизу */
-        .bottom-contacts {
+        .bottom-vista {
             margin-top: 2.5rem;
-            padding: 1.5rem;
+            padding: 1.6rem;
             text-align: center;
+            background: rgba(0, 40, 52, 0.7);
+            backdrop-filter: blur(16px);
             border-radius: 32px;
-            background: rgba(255,255,245,0.3);
-            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 180, 220, 0.7);
         }
-        .bottom-contacts p {
-            margin: 0.3rem 0;
-            font-size: 0.8rem;
+        .bottom-vista p {
+            margin: 0.4rem 0;
+            font-size: 0.85rem;
         }
-        .bottom-contacts a {
-            color: #174550;
+        .bottom-vista a {
+            color: #9eeeff;
             text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px dotted #3f7f8c;
+            font-weight: bold;
+            border-bottom: 1px solid #3cb8e0;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem 0;
-            font-size: 0.6rem;
-            color: #266070;
+            padding: 1.8rem 0;
+            font-size: 0.65rem;
+            color: #8ecbd9;
         }
 
         @media (max-width: 700px) {
             .container { padding: 0 16px; }
-            .top-bar { justify-content: center; gap: 1rem; }
-            h1 { font-size: 1.5rem; }
+            h1 { font-size: 2rem; }
+            .catalog-grid { gap: 1rem; }
             .brand-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
         }
     </style>
@@ -250,110 +286,109 @@
 <body>
 <div class="container">
 
-    <!-- контакты вверху -->
+    <!-- Y2K контакты сверху -->
     <div class="top-bar">
         <a href="tel:+79030116753">+7 903 011 67 53</a>
-        <a href="https://wa.me/79030116753" target="_blank">WhatsApp</a>
-        <a href="https://t.me/pmrprint" target="_blank">Telegram @pmrprint</a>
+        <a href="https://wa.me/79030116753" target="_blank">WHATSAPP</a>
+        <a href="https://t.me/pmrprint" target="_blank">TELEGRAM @PMRPRINT</a>
     </div>
 
-    <!-- шапка без названий брендов -->
-    <div class="glass-card" style="padding: 2rem; margin: 1rem 0;">
-        <h1>Шопперы оптом</h1>
-        <p style="font-size: 0.85rem; color: #1e5a66;">B2B / высокое качество / саржа, синтетика / пошив под заказ</p>
+    <!-- заголовок в стиле Vista -->
+    <div class="vista-glass" style="padding: 2rem; margin: 1rem 0 2rem;">
+        <h1>ШОППЕРЫ ОПТОМ</h1>
+        <p style="font-size: 0.9rem; color: #bcffff; text-shadow: 0 1px 2px #00202a;">B2B / ПРЕМИУМ КАЧЕСТВО / САРЖА, СИНТЕТИКА / ПОШИВ НА ЗАКАЗ</p>
     </div>
 
-    <!-- ========== КАТАЛОГ 12 позиций (без названий брендов) ========== -->
-    <h2>каталог шопперов</h2>
+    <!-- ========== КАТАЛОГ 12 позиций ========== -->
+    <h2>CATALOG // 3:4</h2>
     <div class="catalog-grid">
-        <!-- генерация 12 карточек с заглушками -->
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа 100% хлопок 240г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Диагональ 100% хлопок 210г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа суровая 240г / 34x43x8см (дно)</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа черная 240г / 40x34см / ручки 60см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Полиэстер/хлопок 70/30 210г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Полиэстер с легким блеском / саржа</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа синяя (василек) 240г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа белая 240г / 40x34см / ручки 60см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Универсальный шоппер / плотная ткань</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">S/W бежевый / 37x40см / мягкий беж</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Двунитка серая / классический крой</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
-        <div class="product-card"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Двунитка серая / черные ручки</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <!-- карточка 1 -->
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа 100% хлопок 240г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Диагональ 100% хлопок 210г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа суровая 240г / 34x43x8см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа черная 240г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Полиэстер/хлопок 70/30 210г</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Полиэстер с легким блеском</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа синяя (василек) 240г</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Саржа белая 240г / 40x34см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Универсальный шоппер / плотный</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">S/W бежевый / 37x40см</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Двунитка серая / классика</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
+        <div class="product-card"><div class="photo-placeholder">[ IMAGE 3:4 ]</div><div class="product-name">(без названия)</div><div class="product-desc">Двунитка серая / черные ручки</div><div class="prices"><div class="price-row"><span>1–100 шт</span><span>000 ₽</span></div><div class="price-row"><span>101–500 шт</span><span>000 ₽</span></div><div class="price-row"><span>500–1000 шт</span><span>000 ₽</span></div><div class="price-row"><span>от 1000 шт</span><span>000 ₽</span></div></div></div>
     </div>
 
-    <!-- ========== 16 ПРИМЕРОВ БРЕНДИРОВАНИЯ 1:1 ========== -->
-    <h2>примеры брендирования</h2>
+    <!-- ========== 16 ПРИМЕРОВ БРЕНДИРОВАНИЯ ========== -->
+    <h2>BRANDING LAB // 1:1</h2>
     <div class="brand-grid">
-        <!-- 16 квадратных ячеек -->
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">DTF полноцвет</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Термопринт Flex</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Вышивка логотипа</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Сублимация</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Металлик / золото</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Трафаретная печать</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Комбо DTF+флекс</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Пэчворк аппликация</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">UV DTF стикер</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Бренд-лэйбл</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Глиттер DTF</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Флуоресцентная краска</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Термохромный принт</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Рельефный силикон</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Бисерная вышивка</div></div>
-        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">Неон / светонакопитель</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">DTF FULL COLOR</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">FLEX THERMAL</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">EMBROIDERY</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">SUBLIMATION</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">METALLIC GOLD</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">SCREEN PRINT</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">DTF + FLEX COMBO</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">PATCHWORK</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">UV DTF STICKER</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">WOVEN LABEL</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">GLITTER DTF</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">NEON GLOW</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">THERMOCHROMIC</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">3D SILICONE</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">FLOCK FOIL</div></div>
+        <div class="brand-card"><div class="brand-placeholder">[ 1:1 ]</div><div class="brand-title">HOLOGRAPHIC</div></div>
     </div>
 
-    <!-- ========== ТАБЛИЦЫ (цены заглушки) ========== -->
-    <h2>DTF печать — брендирование</h2>
-    <div class="table-wrap">
+    <!-- ========== DTF ТАБЛИЦЫ ========== -->
+    <h2>DTF PRINT // PRICING</h2>
+    <div class="vista-table">
         <table>
-            <thead><tr><th>размер</th><th>1–300 шт</th><th>300–500 шт</th><th>500–1000 шт</th></tr></thead>
+            <thead><tr><th>SIZE</th><th>1–300 pcs</th><th>300–500 pcs</th><th>500–1000 pcs</th></tr></thead>
             <tbody>
-                <tr><td>10×10 см</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
-                <tr><td>15×15 см</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
-                <tr><td>20×20 см</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
-                <tr><td>25×25 см</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
-                <tr><td>А4 (21×30)</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
-                <tr><td>А3 (30×42)</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
+                <tr><td>10×10 cm</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
+                <tr><td>15×15 cm</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
+                <tr><td>20×20 cm</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
+                <tr><td>25×25 cm</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
+                <tr><td>A4 (21×30)</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
+                <tr><td>A3 (30×42)</td><td>000 ₽</td><td>000 ₽</td><td>000 ₽</td></tr>
             </tbody>
         </table>
     </div>
 
-    <h2>DTF рулоны (термотрансферы оптом)</h2>
-    <div class="table-wrap">
+    <h2>DTF ROLLS (TRANSFER FILM)</h2>
+    <div class="vista-table">
         <table>
-            <thead><tr><th>наименование</th><th>1–50 м</th><th>51–100 м</th><th>101–200 м</th><th>от 201 м</th></tr></thead>
+            <thead><tr><th>PRODUCT</th><th>1–50 m</th><th>51–100 m</th><th>101–200 m</th><th>201+ m</th></tr></thead>
             <tbody>
-                <tr><td>DTF-рулон</td><td>000 ₽/м</td><td>000 ₽/м</td><td>000 ₽/м</td><td>000 ₽/м + доставка</td></tr>
+                <tr><td>DTF ROLL</td><td>000 ₽/m</td><td>000 ₽/m</td><td>000 ₽/m</td><td>000 ₽/m + FREE SHIP</td></tr>
             </tbody>
         </table>
     </div>
 
-    <h2>услуга переноса DTF печати</h2>
-    <div class="table-wrap">
+    <h2>TRANSFER SERVICE</h2>
+    <div class="vista-table">
         <table>
-            <thead><tr><th>тип переноса</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
+            <thead><tr><th>SURFACE TYPE</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>1000+</th></tr></thead>
             <tbody>
-                <tr><td>Перенос на шопперы, футболки (ровная поверхность)</td><td>000</td><td>000</td><td>000</td><td>000</td></tr>
-                <tr><td>Сложный перенос (нестандартные места)</td><td>000</td><td>000</td><td>000</td><td>000</td></tr>
+                <tr><td>Flat (bags, t-shirts)</td><td>000</td><td>000</td><td>000</td><td>000</td></tr>
+                <tr><td>Complex / non-standard</td><td>000</td><td>000</td><td>000</td><td>000</td></tr>
             </tbody>
         </table>
     </div>
 
-    <div class="glass-card" style="padding: 1rem; text-align: center; margin: 1rem 0;">
-        <p style="font-size: 0.75rem;">Возможен пошив шопперов под заказ любых цветов и размеров.</p>
+    <div class="vista-glass" style="padding: 1rem; text-align: center; margin: 1rem 0;">
+        <p style="font-size: 0.8rem; font-weight: bold;">CUSTOM PRODUCTION — ANY COLOR, ANY SIZE</p>
     </div>
 
-    <!-- контакты внизу -->
-    <div class="bottom-contacts">
-        <p>связь с нами</p>
-        <p>телефон / whatsapp: <a href="tel:+79030116753">+7 903 011 67 53</a></p>
-        <p>telegram: <a href="https://t.me/pmrprint">@pmrprint</a></p>
-        <p style="margin-top: 0.6rem; font-size: 0.7rem;">работаем по всей россии / образцы по запросу / индивидуальные условия</p>
+    <!-- контакты внизу Vista стиль -->
+    <div class="bottom-vista">
+        <p>✧ CONNECT WITH US ✧</p>
+        <p>📞 PHONE / WHATSAPP : <a href="tel:+79030116753">+7 903 011 67 53</a></p>
+        <p>💬 TELEGRAM : <a href="https://t.me/pmrprint">@pmrprint</a></p>
+        <p style="margin-top: 0.8rem; font-size: 0.7rem;">RUSSIA WIDE / SAMPLES ON REQUEST / INDIVIDUAL TERMS</p>
     </div>
 
     <footer>
-        оптовые шопперы и dtf печать
+        SHOPPERS B2B // DTF TRANSFER // VISTA Y2K EDITION
     </footer>
 </div>
 </body>
