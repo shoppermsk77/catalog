@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог | Шопперы и печать оптом</title>
+    <title>PMR | ДИЗАЙН И МЕРЧ ДЛЯ ВАШЕГО БИЗНЕСА</title>
     <style>
         * {
             margin: 0;
@@ -12,150 +12,240 @@
         }
 
         body {
-            background: #fef9f0;
-            font-family: 'Segoe UI', 'Helvetica Neue', 'Frutiger', system-ui, -apple-system, sans-serif;
-            color: #2c2b28;
-            line-height: 1.45;
-            padding: 2rem 1rem;
-        }
-
-        /* жидкое стекло — мягкие размытые грани */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* стеклянные карточки без шейдеров */
-        .glass-card {
-            background: rgba(255, 248, 235, 0.75);
-            backdrop-filter: blur(2px);
-            border-radius: 28px;
-            border: 1px solid rgba(210, 190, 165, 0.35);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(255,255,245,0.8);
-        }
-
-        .section-card {
             background: #ffffff;
-            border-radius: 32px;
-            padding: 1.6rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
-            border: 1px solid #f0e4d4;
+            font-family: 'Helvetica Neue', 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.4;
         }
 
-        /* контакты сверху */
-        .top-bar {
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* нестандартная геометрия */
+        .hero {
+            padding: 80px 0 60px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+            background: #ffffff;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ccc, #ccc, transparent);
+        }
+
+        /* плашки с диагоналями */
+        .section {
+            margin-bottom: 64px;
+            position: relative;
+        }
+
+        .section-header {
             display: flex;
-            justify-content: flex-end;
-            gap: 1.8rem;
-            margin-bottom: 1.5rem;
+            align-items: baseline;
+            justify-content: space-between;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 16px;
+            margin-bottom: 32px;
             flex-wrap: wrap;
         }
-        .top-bar a {
-            color: #6b5a4b;
-            text-decoration: none;
-            font-size: 1rem;
+
+        .section-title {
+            font-size: 1.8rem;
             font-weight: 500;
-            background: #fffaf3;
-            padding: 0.4rem 1.4rem;
-            border-radius: 48px;
-            border: 1px solid #e8dccc;
+            letter-spacing: -0.02em;
+            color: #000;
+            position: relative;
+            display: inline-block;
         }
 
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 500;
-            color: #4c3d30;
-            letter-spacing: -0.3px;
-            margin-bottom: 0.25rem;
+        .section-title span {
+            font-weight: 300;
+            color: #888;
         }
 
-        .sub {
-            color: #8f7e6b;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+        .section-count {
+            font-size: 0.8rem;
+            color: #aaa;
+            font-weight: 400;
         }
 
-        h2 {
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: #5e4b38;
-            margin: 2rem 0 1rem 0;
-            padding-bottom: 0.4rem;
-            border-bottom: 2px solid #f0e2d0;
+        /* асимметричная сетка каталога */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
         }
 
-        /* таблицы — четкие, крупные */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.2rem 0;
+        /* карточка с геометрическими акцентами */
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #efefef;
+            transition: all 0.3s ease;
+            position: relative;
         }
-        table {
+
+        .product-card:nth-child(odd) {
+            transform: translateY(0);
+        }
+
+        .product-card:nth-child(even) {
+            transform: translateY(8px);
+        }
+
+        .product-card:hover {
+            border-color: #d0d0d0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+        }
+
+        /* фото 3:4 */
+        .photo-frame {
+            aspect-ratio: 3 / 4;
             width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            background: white;
-            border-radius: 24px;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
         }
-        th, td {
-            padding: 1rem 0.8rem;
-            text-align: left;
-            border-bottom: 1px solid #f0e2d4;
-            vertical-align: top;
-        }
-        th {
-            background: #fef7ef;
-            font-weight: 600;
-            color: #4a3a2a;
-        }
-        .price-row {
-            white-space: nowrap;
+
+        .photo-placeholder {
+            color: #bbb;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
         }
 
         /* метка "нет в наличии" */
-        .out-of-stock {
-            color: #b87c5a;
+        .stock-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #fff;
+            padding: 4px 10px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #aa8c6e;
+            border: 1px solid #e0d6cc;
+            z-index: 2;
+        }
+
+        .card-content {
+            padding: 20px 18px 24px;
+        }
+
+        .product-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            color: #000;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .product-material {
             font-size: 0.7rem;
-            font-weight: normal;
-            margin-left: 0.3rem;
+            color: #999;
+            margin-bottom: 16px;
+            border-left: 2px solid #e0e0e0;
+            padding-left: 8px;
         }
 
-        .price-note {
+        .price-table-mini {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 8px;
+            margin-top: 12px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 14px;
+        }
+
+        .price-item {
             font-size: 0.7rem;
-            color: #b2947a;
-            margin-top: 0.2rem;
+            color: #333;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem 0 1rem;
-            color: #b7a082;
-            border-top: 1px solid #f0e2d4;
-            margin-top: 2rem;
+        .price-item span:first-child {
+            color: #aaa;
+            font-weight: 400;
+            margin-right: 6px;
         }
 
-        .contacts-bottom {
-            background: #fffaf3;
-            padding: 1.4rem;
-            text-align: center;
-            border-radius: 60px;
-            margin: 2rem 0 1rem;
-            border: 1px solid #efe0cf;
-        }
-        .contacts-bottom p {
-            font-size: 1rem;
-            margin: 0.3rem 0;
-        }
-        .contacts-bottom a {
-            color: #6b5a4b;
-            text-decoration: none;
+        .price-item span:last-child {
             font-weight: 500;
         }
 
-        @media (max-width: 700px) {
-            body { padding: 1rem; }
-            th, td { font-size: 0.7rem; padding: 0.6rem 0.4rem; }
-            h2 { font-size: 1.3rem; }
+        /* контакты */
+        .contact-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 24px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        .contact-bar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 450;
+            transition: 0.2s;
+        }
+
+        .contact-bar a:hover {
+            color: #000;
+        }
+
+        .footer-contacts {
+            margin-top: 80px;
+            padding: 48px 0 40px;
+            border-top: 1px solid #e8e8e8;
+            text-align: center;
+            background: #fefefe;
+            clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer-contacts p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-contacts a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .logo small {
+            font-weight: 300;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        @media (max-width: 800px) {
+            .container { padding: 0 20px; }
+            .catalog-grid { gap: 20px; }
+            .product-card:nth-child(even) { transform: translateY(0); }
+            .section-title { font-size: 1.4rem; }
+            .hero { padding: 40px 0 30px; }
         }
     </style>
 </head>
@@ -163,209 +253,331 @@
 
 <div class="container">
     <!-- контакты сверху -->
-    <div class="top-bar">
+    <div class="contact-bar">
         <a href="tel:+79030116753">+7 903 011 67 53</a>
-        <a href="https://t.me/pmrprint" target="_blank">Telegram @pmrprint</a>
+        <a href="https://t.me/pmrprint" target="_blank">@pmrprint</a>
     </div>
 
-    <div class="glass-card" style="padding: 1.8rem; margin-bottom: 1.5rem;">
-        <h1>шопперы, сумки, футболки<br>dtf печать оптом</h1>
-        <div class="sub">b2b / высокое качество / пошив на заказ</div>
-    </div>
-
-    <!-- 1. ШОППЕРЫ -->
-    <div class="section-card">
-        <h2>1. шопперы</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr><th>наименование</th><th>1–100</th><th>101–500</th><th>500–1000</th><th>от 1000</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Саржа Суровая 100% Хлопок 240г 40х34см Ручки 60см</td><td>155</td><td>145</td><td>135</td><td>130</td></tr>
-                    <tr><td>Диагональ Суровая 100% Хлопок 210г 40х34см Ручки 60см</td><td>130</td><td>125</td><td>115</td><td>110</td></tr>
-                    <tr><td>Саржа Суровая 100% Хлопок 240г 34см высота 43см ширина 8см глубина. Ручки 60см</td><td>175</td><td>165</td><td>160</td><td>155</td></tr>
-                    <tr><td>Саржа Черная 100% Хлопок 240г 40х34см Ручки 60см</td><td>190</td><td>160</td><td>155</td><td>150</td></tr>
-                    <tr><td>Шоппер чёрный полиэстер 70/30 Полиэстер хлопок. Плетение как саржа плотность 210г Размер 40х34см Ручки 60см</td><td>145</td><td>135</td><td>130</td><td>125</td></tr>
-                    <tr><td>Шоппер чёрный полиэстер с легким блеском</td><td>130</td><td>125</td><td>120</td><td>115</td></tr>
-                    <tr><td>Саржа Синяя (Василек) 100% Хлопок 240г 40х34см Ручки 60см</td><td>190</td><td>170</td><td>165</td><td>160</td></tr>
-                    <tr><td>Саржа Белая 100% Хлопок 240г 40х34см Ручки 60см</td><td>180</td><td>160</td><td>155</td><td>150</td></tr>
-                    <tr><td>S/glass беж зип <span class="out-of-stock">(нет в наличии)</span></td><td>по запросу</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>S/B <span class="out-of-stock">(нет в наличии)</span></td><td>160</td><td>160</td><td>160</td><td>160</td></tr>
-                    <tr><td>S/W бежевый 37см ширина 40см высота</td><td>170</td><td>165</td><td>160</td><td>155</td></tr>
-                    <tr><td>S/двунитка Сер</td><td>100</td><td>80</td><td>80</td><td>80</td></tr>
-                    <tr><td>S/двунитка Сер черн ручки</td><td>100</td><td>80</td><td>80</td><td>80</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="price-note">* минимальный тираж, остатки на складе уточняйте</div>
-    </div>
-
-    <!-- 2. МАНИШКИ / МЕШОЧКИ / КОНВЕРТЫ -->
-    <div class="section-card">
-        <h2>2. манишки / мешочки / конверты</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>наименование</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
-                <tbody>
-                    <tr><td>Манишка съёмная полиэстер</td><td>210</td><td>200</td><td>190</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд</td><td>по запросу</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Конверт тканевый для книги / блокнота (26х26см)</td><td>190 руб</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек / Пыльник (Саржа)</td><td>155</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Черный</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Черный 2 <span class="out-of-stock">(нет в наличии)</span></td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Печенье Ч</td><td>180</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Печенье Ж</td><td>180</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Звезда</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Граффити Ж</td><td>180</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Граффити С</td><td>180</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Дино</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Пингви</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Зайки</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Котики <span class="out-of-stock">(нет в наличии)</span></td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Самолет</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Лего</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Зима</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Совушки</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Камуфляж</td><td>180</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Хоккеист</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Космос</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Гео</td><td>150</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Мешочек для обуви оксфорд/Совы <span class="out-of-stock">(нет в наличии)</span></td><td>—</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                </tbody>
-            </table>
+    <!-- hero -->
+    <div class="hero">
+        <div class="logo">PMR <small>| дизайн и мерч для вашего бизнеса</small></div>
+        <div style="max-width: 580px; margin: 32px 0 24px;">
+            <h1 style="font-size: 3rem; font-weight: 450; letter-spacing: -0.02em; line-height: 1.1;">шопперы, сумки,<br>dtf печать оптом</h1>
+            <p style="color: #666; margin-top: 16px; font-size: 1rem;">b2b / пошив на заказ / высокое качество</p>
         </div>
     </div>
 
-    <!-- 3. СУМКИ -->
-    <div class="section-card">
-        <h2>3. сумки</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>наименование</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
-                <tbody>
-                    <tr><td>B/Canvas кофе кнопка</td><td>660</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas кофе молзия <span class="out-of-stock">(нет в наличии)</span></td><td>737</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas сер кнопка</td><td>660</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas сер молния <span class="out-of-stock">(нет в наличии)</span></td><td>737</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas хаки кнопка</td><td>660</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas хаки молния <span class="out-of-stock">(нет в наличии)</span></td><td>737</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas черн кнопка</td><td>660</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/Canvas черн молния <span class="out-of-stock">(нет в наличии)</span></td><td>737</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/L zip беж</td><td>750</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/L zip бел <span class="out-of-stock">(нет в наличии)</span></td><td>750</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/L zip Оранж</td><td>780</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/L zip т.сер</td><td>780</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/L zip черн</td><td>780</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady M беж</td><td>580</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady M бел</td><td>580</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady M Оранж</td><td>620</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady M т.сер <span class="out-of-stock">(нет в наличии)</span></td><td>620</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady M черн</td><td>620</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady S беж <span class="out-of-stock">(нет в наличии)</span></td><td>550</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady S бел</td><td>550</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady S сер</td><td>590</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady S Оранж <span class="out-of-stock">(нет в наличии)</span></td><td>590</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/lady S черн</td><td>590</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M glas W бел <span class="out-of-stock">(нет в наличии)</span></td><td>640</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M glas беж <span class="out-of-stock">(нет в наличии)</span></td><td>640</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M glas Оранж <span class="out-of-stock">(нет в наличии)</span></td><td>680</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M glas т.сер</td><td>680</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M glas черн <span class="out-of-stock">(нет в наличии)</span></td><td>680</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M ink беж <span class="out-of-stock">(нет в наличии)</span></td><td>680</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M ink Оранж <span class="out-of-stock">(нет в наличии)</span></td><td>680</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>B/M ink черн <span class="out-of-stock">(нет в наличии)</span></td><td>680</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Сумка/Оксфорд зеленый</td><td>350</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Сумка/Оксфорд розовый</td><td>350</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Сумка/Оксфорд бордовый</td><td>350</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Сумка/Оксфорд серый/хаки</td><td>350</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                    <tr><td>Сумка/Оксфорд черный</td><td>300</td><td>по запросу</td><td>по запросу</td><td>по запросу</td></tr>
-                </tbody>
-            </table>
+    <!-- ========== 1. ШОППЕРЫ ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">шопперы <span>— 13 моделей</span></div>
+            <div class="section-count">опт от 1 шт</div>
+        </div>
+        <div class="catalog-grid">
+            <!-- саржа суровая 1 -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Саржа Суровая</div>
+                    <div class="product-material">100% хлопок 240г / 40x34см / ручки 60см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>155₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>145₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>135₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>130₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- диагональ суровая -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Диагональ Суровая</div>
+                    <div class="product-material">100% хлопок 210г / 40x34см / ручки 60см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>130₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>125₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>115₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>110₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- саржа глубокая -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Саржа Глубокая</div>
+                    <div class="product-material">240г / 34x43x8см / ручки 60см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>175₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>165₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>160₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>155₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- саржа черная -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Саржа Черная</div>
+                    <div class="product-material">100% хлопок 240г / 40x34см / ручки 60см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>190₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>160₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>155₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>150₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- полиэстер черный 70/30 -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Полиэстер Черный 70/30</div>
+                    <div class="product-material">полиэстер/хлопок 210г / 40x34см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>145₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>135₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>130₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>125₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- полиэстер черный блеск -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Полиэстер Черный Блеск</div>
+                    <div class="product-material">полиэстер с легким блеском</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>130₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>125₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>120₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>115₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- саржа синяя василек -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Саржа Синяя Василек</div>
+                    <div class="product-material">100% хлопок 240г / 40x34см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>190₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>170₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>165₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>160₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- саржа белая -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Саржа Белая</div>
+                    <div class="product-material">100% хлопок 240г / 40x34см / ручки 60см</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>180₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>160₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>155₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>150₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- s/glass беж зип -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="stock-badge">нет в наличии</div></div>
+                <div class="card-content">
+                    <div class="product-title">S/glass Беж Зип</div>
+                    <div class="product-material">модель с замком</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>по запросу</span></div>
+                        <div class="price-item"><span>101–500</span><span>по запросу</span></div>
+                        <div class="price-item"><span>500–1000</span><span>по запросу</span></div>
+                        <div class="price-item"><span>1000+</span><span>по запросу</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- s/b -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="stock-badge">нет в наличии</div></div>
+                <div class="card-content">
+                    <div class="product-title">S/B Базовая</div>
+                    <div class="product-material">универсальный крой</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>160₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>160₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>160₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>160₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- s/w бежевый -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">S/W Бежевый</div>
+                    <div class="product-material">37x40см / мягкий беж</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>170₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>165₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>160₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>155₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- двунитка сер -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Двунитка Серая</div>
+                    <div class="product-material">классический крой</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>100₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>80₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>80₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>80₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- двунитка сер черн ручки -->
+            <div class="product-card">
+                <div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div>
+                <div class="card-content">
+                    <div class="product-title">Двунитка Серая Черн Ручки</div>
+                    <div class="product-material">черные ручки</div>
+                    <div class="price-table-mini">
+                        <div class="price-item"><span>1–100</span><span>100₽</span></div>
+                        <div class="price-item"><span>101–500</span><span>80₽</span></div>
+                        <div class="price-item"><span>500–1000</span><span>80₽</span></div>
+                        <div class="price-item"><span>1000+</span><span>80₽</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- 4. ФУТБОЛКИ -->
-    <div class="section-card">
-        <h2>4. футболки</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>наименование</th><th>1–300</th></tr></thead>
-                <tbody>
-                    <tr><td>Футболка черная S</td><td>200</td></tr>
-                    <tr><td>Футболка черная M</td><td>200</td></tr>
-                    <tr><td>Футболка черная L</td><td>200</td></tr>
-                    <tr><td>Футболка черная XL</td><td>200</td></tr>
-                    <tr><td>Футболка черная 2XL</td><td>200</td></tr>
-                    <tr><td>Футболка черная 3XL</td><td>200</td></tr>
-                    <tr><td>Футболка белая S</td><td>200</td></tr>
-                    <tr><td>Футболка белая M</td><td>200</td></tr>
-                    <tr><td>Футболка белая L</td><td>200</td></tr>
-                    <tr><td>Футболка белая XL</td><td>200</td></tr>
-                    <tr><td>Футболка белая 2XL</td><td>200</td></tr>
-                    <tr><td>Футболка белая 3XL</td><td>200</td></tr>
-                </tbody>
-            </table>
+    <!-- ========== 2. МАНИШКИ / МЕШОЧКИ / КОНВЕРТЫ ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">манишки / мешочки / конверты <span>— 20+ позиций</span></div>
+            <div class="section-count">опт от 1 шт</div>
+        </div>
+        <div class="catalog-grid">
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Манишка съёмная полиэстер</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>210₽</span></div><div class="price-item"><span>300–500</span><span>200₽</span></div><div class="price-item"><span>500–1000</span><span>190₽</span></div><div class="price-item"><span>1000+</span><span>по запросу</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек оксфорд</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>по запросу</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Конверт тканевый для книги</div><div class="product-material">26x26см</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>190₽</span></div><div class="price-item"><span>300+</span><span>по запросу</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Пыльник Саржа</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>155₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Оксфорд Черный</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="stock-badge">нет в наличии</div></div><div class="card-content"><div class="product-title">Мешочек Оксфорд Черный 2</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Печенье Ч</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>180₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Печенье Ж</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>180₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Звезда</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Граффити Ж</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>180₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Граффити С</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>180₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Дино</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Пингви</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Зайки</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="stock-badge">нет в наличии</div></div><div class="card-content"><div class="product-title">Мешочек Котики</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Мешочек Самолет</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div></div></div></div>
         </div>
     </div>
 
-    <!-- 5. DTF ПЕЧАТЬ (НА НОСИТЕЛЕ) -->
-    <div class="section-card">
-        <h2>5. dtf-печать — брендирование (на носителе заказчика)</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>размер</th><th>1–300</th><th>300–500</th><th>500–1000</th></tr></thead>
-                <tbody>
-                    <tr><td>10×10 см</td><td>60 ₽</td><td>50 ₽</td><td>40 ₽</td></tr>
-                    <tr><td>15×15 см</td><td>80 ₽</td><td>75 ₽</td><td>70 ₽</td></tr>
-                    <tr><td>20×20 см</td><td>100 ₽</td><td>90 ₽</td><td>80 ₽</td></tr>
-                    <tr><td>25×25 см</td><td>120 ₽</td><td>100 ₽</td><td>95 ₽</td></tr>
-                    <tr><td>А4 (21×30)</td><td>150 ₽</td><td>140 ₽</td><td>130 ₽</td></tr>
-                    <tr><td>А3 (30×42)</td><td>250 ₽</td><td>230 ₽</td><td>220 ₽</td></tr>
-                </tbody>
-            </table>
+    <!-- ========== 3. СУМКИ ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">сумки <span>— 30+ моделей</span></div>
+            <div class="section-count">опт от 1 шт</div>
+        </div>
+        <div class="catalog-grid">
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/Canvas Кофе Кнопка</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>660₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="stock-badge">нет в наличии</div></div><div class="card-content"><div class="product-title">B/Canvas Кофе Молния</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>737₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/Canvas Сер Кнопка</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>660₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div><div class="stock-badge">нет в наличии</div></div><div class="card-content"><div class="product-title">B/Canvas Сер Молния</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>737₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/Canvas Хаки Кнопка</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>660₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/Canvas Черн Кнопка</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>660₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/L zip Беж</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>750₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/L zip Оранж</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>780₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/L zip т.сер</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>780₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/L zip Черн</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>780₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/lady M Беж</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>580₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/lady M Бел</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>580₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/lady M Оранж</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>620₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">B/lady M Черн</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>620₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Сумка Оксфорд Зеленый</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>350₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Сумка Оксфорд Черный</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>300₽</span></div></div></div></div>
         </div>
     </div>
 
-    <!-- 6. DTF РУЛОНЫ -->
-    <div class="section-card">
-        <h2>6. dtf-печать — рулоны (термотрансферы оптом)</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>наименование</th><th>1–50 м</th><th>51–100 м</th><th>101–200 м</th><th>от 201 м</th></tr></thead>
-                <tbody>
-                    <tr><td>DTF-рулон</td><td>700 ₽/м</td><td>650 ₽/м</td><td>600 ₽/м</td><td>550 ₽/м + бесплатная доставка</td></tr>
-                </tbody>
-            </table>
+    <!-- ========== 4. ФУТБОЛКИ ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">футболки <span>— 12 размеров</span></div>
+            <div class="section-count">опт от 1 шт</div>
+        </div>
+        <div class="catalog-grid">
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Черная S</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Черная M</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Черная L</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Черная XL</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Черная 2XL</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Черная 3XL</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Белая S</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Белая M</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Белая L</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Белая XL</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Белая 2XL</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Футболка Белая 3XL</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>200₽</span></div></div></div></div>
         </div>
     </div>
 
-    <!-- 7. УСЛУГА ПЕРЕНОСА -->
-    <div class="section-card">
-        <h2>7. услуга переноса dtf печати</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr><th>тип переноса</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
-                <tbody>
-                    <tr><td>Перенос на шопперы, футболки, простая ровная поверхность</td><td>50</td><td>40</td><td>35</td><td>30</td></tr>
-                    <tr><td>Сложный перенос на нестандартные места</td><td>100</td><td>80</td><td>70</td><td>60</td></tr>
-                </tbody>
-            </table>
+    <!-- ========== 5. DTF ПЕЧАТЬ ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">dtf печать — брендирование</div>
+            <div class="section-count">на вашем носителе</div>
         </div>
-        <div class="price-note" style="margin-top: 1rem;">Возможен пошив шопперов под заказ любых цветов и размеров.</div>
+        <div class="catalog-grid">
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF 10x10 см</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>60₽</span></div><div class="price-item"><span>300–500</span><span>50₽</span></div><div class="price-item"><span>500–1000</span><span>40₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF 15x15 см</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>80₽</span></div><div class="price-item"><span>300–500</span><span>75₽</span></div><div class="price-item"><span>500–1000</span><span>70₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF 20x20 см</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>100₽</span></div><div class="price-item"><span>300–500</span><span>90₽</span></div><div class="price-item"><span>500–1000</span><span>80₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF 25x25 см</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>120₽</span></div><div class="price-item"><span>300–500</span><span>100₽</span></div><div class="price-item"><span>500–1000</span><span>95₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF А4 (21x30)</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>150₽</span></div><div class="price-item"><span>300–500</span><span>140₽</span></div><div class="price-item"><span>500–1000</span><span>130₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF А3 (30x42)</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>250₽</span></div><div class="price-item"><span>300–500</span><span>230₽</span></div><div class="price-item"><span>500–1000</span><span>220₽</span></div></div></div></div>
+        </div>
+    </div>
+
+    <!-- ========== 6. DTF РУЛОНЫ ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">dtf рулоны — термотрансферы оптом</div>
+        </div>
+        <div class="catalog-grid">
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">DTF-рулон</div><div class="price-table-mini"><div class="price-item"><span>1–50 м</span><span>700₽/м</span></div><div class="price-item"><span>51–100 м</span><span>650₽/м</span></div><div class="price-item"><span>101–200 м</span><span>600₽/м</span></div><div class="price-item"><span>201+ м</span><span>550₽/м + доставка</span></div></div></div></div>
+        </div>
+    </div>
+
+    <!-- ========== 7. УСЛУГА ПЕРЕНОСА ========== -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title">услуга переноса dtf печати</div>
+        </div>
+        <div class="catalog-grid">
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Перенос на ровную поверхность</div><div class="product-material">шопперы, футболки</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>50₽</span></div><div class="price-item"><span>300–500</span><span>40₽</span></div><div class="price-item"><span>500–1000</span><span>35₽</span></div><div class="price-item"><span>1000+</span><span>30₽</span></div></div></div></div>
+            <div class="product-card"><div class="photo-frame"><div class="photo-placeholder">[ фото 3:4 ]</div></div><div class="card-content"><div class="product-title">Сложный перенос</div><div class="product-material">нестандартные места</div><div class="price-table-mini"><div class="price-item"><span>1–300</span><span>100₽</span></div><div class="price-item"><span>300–500</span><span>80₽</span></div><div class="price-item"><span>500–1000</span><span>70₽</span></div><div class="price-item"><span>1000+</span><span>60₽</span></div></div></div></div>
+        </div>
+        <div style="margin-top: 24px; padding: 16px 0; border-top: 1px solid #eee; font-size: 0.8rem; color: #666;">возможен пошив шопперов под заказ любых цветов и размеров</div>
     </div>
 
     <!-- контакты внизу -->
-    <div class="contacts-bottom">
+    <div class="footer-contacts">
         <p>для связи</p>
         <p><a href="tel:+79030116753">+7 903 011 67 53</a> | <a href="https://t.me/pmrprint" target="_blank">Telegram @pmrprint</a></p>
-        <p style="font-size: 0.8rem; margin-top: 0.4rem;">работаем по всей россии / образцы по запросу</p>
+        <p style="font-size: 0.7rem; margin-top: 12px;">работаем по всей россии / образцы по запросу / индивидуальные условия</p>
     </div>
 
-    <footer>
-        шопперы, сумки, футболки, dtf печать оптом
-    </footer>
 </div>
-
 </body>
 </html>
