@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>PMR BLVNK · шопперы оптом</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>PMR BLVNK · шопперы оптом | бело-голубая премиум коллекция</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,82 +13,143 @@
         }
 
         body {
-            background: #ffffff;
+            background: #f2f5fc;  /* мягкий голубовато-белый фон */
             font-family: 'Inter', 'Manrope', sans-serif;
-            color: #111111;
+            color: #1a2c3e;
             line-height: 1.45;
             padding: 20px 18px 36px;
             -webkit-font-smoothing: antialiased;
-            transition: background 0.2s, color 0.2s;
+            transition: background 0.25s ease, color 0.2s;
         }
 
-        /* тёмная тема (премиум) — включается через prefers-color-scheme, 
-           но мы добавим и ручной класс для демонстрации */
-        body.dark,
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #0f0f0f;
-                color: #e0e0e0;
-            }
-            .page {
-                background: #141414;
-                border-color: #2a2a2a;
-                box-shadow: 0 20px 36px -12px rgba(0,0,0,0.5);
-            }
-            .header, .product-card, .hero-premium, .contact-block, .premium-btn, 
-            .price-table td, .example-square, .highlight-note {
-                background: #1a1a1a;
-                border-color: #333;
-                color: #ddd;
-            }
-            .logo, .product-title, h2, .contact-item, .address {
-                color: #f0f0f0;
-            }
-            .price-table th {
-                color: #bbb;
-                border-bottom-color: #3a2a30;
-            }
-            .price-table td {
-                border-bottom-color: #2c2c2c;
-            }
-            .premium-btn {
-                box-shadow: 0 2px 0 #3a2a2e, 0 6px 14px rgba(0,0,0,0.2);
-            }
-            .product-image {
-                background: #232123;
-                border-color: #3e3236;
-            }
-            .price-placeholder {
-                background: #262122;
-                border-color: #4a3a3e;
-                color: #ccc;
-            }
+        /* ----- ТЁМНАЯ ТЕМА (премиум голубовато-темная) ----- */
+        body.dark {
+            background: #0b121f;
+            color: #e3edf7;
+        }
+        body.dark .page {
+            background: #0f1622;
+            border-color: #2a3a4e;
+            box-shadow: 0 20px 36px -12px rgba(0,0,0,0.6);
+        }
+        body.dark .header {
+            background: #111a28;
+            border-bottom-color: #2a3f54;
+        }
+        body.dark .logo {
+            color: #d6eaff;
+            border-right-color: #2f4b6e;
+        }
+        body.dark .logo span {
+            color: #6c8fae;
+        }
+        body.dark .premium-btn {
+            background: #16212f;
+            border-color: #2c4a6a;
+            color: #cde3f7;
+            box-shadow: 0 2px 0 #1e3a58;
+        }
+        body.dark .hero-premium {
+            background: #0f1825;
+            border-color: #253e55;
+            box-shadow: inset 0 0 0 1px #1c3348, 0 8px 16px -10px rgba(0,0,0,0.5);
+        }
+        body.dark .hero-premium::before {
+            color: #5486a8;
+        }
+        body.dark .product-card {
+            background: #111b2a;
+            border-color: #26405b;
+            box-shadow: 0 1px 0 #1f3c55, 0 12px 24px -16px rgba(0,20,40,0.6);
+        }
+        body.dark .product-image {
+            background: #0f1826;
+            border-color: #264664;
+            color: #6b92b5;
+        }
+        body.dark .product-title {
+            color: #eef4fc;
+        }
+        body.dark .price-tiers {
+            background: #0f1929;
+            border-color: #284a6a;
+            color: #b9d4f0;
+        }
+        body.dark .tier span {
+            color: #bedbff;
+        }
+        body.dark .price-table th {
+            color: #bfdcfc;
+            border-bottom-color: #2c4d70;
+        }
+        body.dark .price-table td {
+            border-bottom-color: #1f3a53;
+            color: #caddf0;
+        }
+        body.dark .table-caption {
+            color: #b2d4f5;
+        }
+        body.dark .highlight-note {
+            background: #0f1a2a;
+            border-color: #2a4d72;
+            color: #cfe3fc;
+        }
+        body.dark .example-square {
+            background: #0e1829;
+            border-color: #2a4a6c;
+            color: #6c98c2;
+            box-shadow: inset 0 0 0 1px #1c3550;
+        }
+        body.dark .contact-block {
+            background: #0f1829;
+            border-color: #2a4868;
+        }
+        body.dark .contact-item {
+            border-bottom-color: #2d5072;
+            color: #d5eaff;
+        }
+        body.dark .address {
+            border-top-color: #2a4a6c;
+            color: #b9cfec;
+        }
+        body.dark .footer-note {
+            color: #6686aa;
+        }
+        body.dark .card-table-wrapper {
+            background: #0e1728;
+            border-color: #2c4b6e;
         }
 
+        /* главный контейнер страницы */
         .page {
             max-width: 1440px;
             margin: 0 auto;
             background: #ffffff;
-            border-radius: 0;
+            border-radius: 20px;
             padding: 32px 30px 36px;
-            box-shadow: 0 16px 32px -12px rgba(0,0,0,0.04), 0 6px 12px -6px rgba(210,160,170,0.08);
-            border: 1px solid #f0e8ea;
+            box-shadow: 0 20px 35px -12px rgba(0, 30, 60, 0.08), 0 4px 12px rgba(0, 20, 50, 0.02);
+            border: 1px solid #e3edf5;
             transition: background 0.2s, border 0.2s;
         }
 
         h2 {
             font-family: 'Manrope', 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 1.7rem;
+            letter-spacing: -0.3px;
             margin-bottom: 28px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #ecdce1;
+            border-bottom: 2px solid #cbdff0;
             display: inline-block;
             text-transform: uppercase;
+            color: #1f4a76;
+        }
+        body.dark h2 {
+            border-bottom-color: #2d5a82;
+            color: #c2e0ff;
         }
 
-        /* ----- header ----- */
+        /* ----- header с кнопкой переключения темы ----- */
         .header {
             display: flex;
             flex-wrap: wrap;
@@ -97,59 +158,100 @@
             margin-bottom: 24px;
             padding: 12px 22px;
             background: #ffffff;
-            border-bottom: 1px solid #eedfe3;
-            box-shadow: 0 2px 8px rgba(230,200,205,0.08);
+            border-bottom: 1px solid #dce9f2;
+            border-radius: 60px;
+            box-shadow: 0 2px 6px rgba(150, 190, 220, 0.08);
         }
-
         .logo {
-            font-size: 1.7rem;
-            font-weight: 450;
-            letter-spacing: 2px;
+            font-size: 1.65rem;
+            font-weight: 550;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #1e1a1c;
-            border-right: 1.5px solid #eacfd8;
+            color: #1a4766;
+            border-right: 1.5px solid #cadeef;
             padding-right: 22px;
         }
-        .logo span { font-weight: 300; color: #9e707e; margin: 0 5px; }
+        .logo span { font-weight: 300; color: #5b8ab0; margin: 0 5px; }
 
-        .header-actions { display: flex; gap: 14px; }
+        .header-actions {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
         .premium-btn {
-            background: #fefcfc;
-            border: 1px solid #edd5dd;
-            padding: 10px 24px;
-            border-radius: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #2c2024;
-            box-shadow: 0 2px 0 #f0d4de;
+            background: #f8fcff;
+            border: 1px solid #cde2f2;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #1a5780;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
             cursor: default;
+            transition: all 0.1s;
         }
 
-        /* hero — чуть меньше */
+        /* кнопка тёмной темы (стильная) */
+        .theme-switch-btn {
+            background: #ecf3fa;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            color: #1f6392;
+        }
+        body.dark .theme-switch-btn {
+            background: #233a55;
+            color: #ffdd99;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .theme-switch-btn:hover {
+            transform: scale(0.96);
+            background: #dfecf7;
+        }
+        body.dark .theme-switch-btn:hover {
+            background: #2f4e72;
+        }
+
+        /* Hero секция с голубым оттенком */
         .hero-premium {
-            background: #faf5f6;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e5f0fe 100%);
             width: 100%;
             aspect-ratio: 16 / 5.5;
             margin: 18px 0 32px;
-            border: 1px solid #f3e2e7;
-            box-shadow: inset 0 0 0 1px #f9eaee, 0 8px 16px -10px rgba(170,120,130,0.1);
+            border-radius: 28px;
+            border: 1px solid #cddef0;
+            box-shadow: inset 0 0 0 1px #ffffff80, 0 8px 18px -8px rgba(70, 130, 180, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        body.dark .hero-premium {
+            background: linear-gradient(135deg, #132337, #0b1628);
+            border-color: #2f547a;
+        }
         .hero-premium::before {
             content: "premium collection";
-            font-size: 1.5rem;
-            font-weight: 300;
+            font-size: 1.4rem;
+            font-weight: 400;
             letter-spacing: 8px;
-            color: #b28a95;
+            color: #2f739e;
             text-transform: uppercase;
-            opacity: 0.6;
+            opacity: 0.7;
+        }
+        body.dark .hero-premium::before {
+            color: #88b6dc;
         }
 
-        /* ----- ВЕРТИКАЛЬНЫЕ КАРТОЧКИ 3:4 (ширина меньше высоты) ----- */
+        /* ----- ВЕРТИКАЛЬНЫЕ КАРТОЧКИ 3:4 (окна для шопперов) ----- */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -157,107 +259,165 @@
             margin: 30px 0 40px;
         }
 
-        /* строго 3:4, вытянутые по вертикали */
+        /* строго 3:4, вытянутые по вертикали, окна-карточки */
         .product-card {
             background: #ffffff;
-            border-radius: 0;
-            padding: 20px 16px 18px;
-            box-shadow: 0 1px 0 #ecd9df, 0 12px 24px -16px rgba(180,120,140,0.18);
-            border: 1px solid #f0dee3;
-            aspect-ratio: 3 / 4;   /* вертикальный прямоугольник */
+            border-radius: 24px;
+            padding: 20px 18px 20px;
+            box-shadow: 0 6px 14px rgba(70, 130, 180, 0.06), 0 1px 0 #e0eef9;
+            border: 1px solid #dceaf5;
+            aspect-ratio: 3 / 4;
             display: flex;
             flex-direction: column;
-            transition: box-shadow 0.25s ease, transform 0.15s;
+            transition: box-shadow 0.2s ease, transform 0.15s;
         }
-
-        /* шейдер при наведении */
         .product-card:hover {
-            box-shadow: 0 4px 0 #e6c5d0, 0 20px 30px -16px rgba(170,110,130,0.25);
-            border-color: #e7ced7;
-            transform: translateY(-2px);
+            box-shadow: 0 16px 28px -12px rgba(30, 110, 160, 0.2), 0 2px 0 #b8d4f0;
+            border-color: #bdd9f0;
+            transform: translateY(-3px);
         }
 
         .product-image {
-            background: #fcf6f8;
+            background: #f6fbfe;
             flex: 1;
-            margin-bottom: 14px;
-            border: 1px solid #f4dfe5;
-            box-shadow: inset 0 0 0 1px #f9e6ec;
+            margin-bottom: 16px;
+            border-radius: 18px;
+            border: 1px solid #ddeeff;
+            box-shadow: inset 0 0 0 1px #ffffff, 0 1px 2px rgba(0,0,0,0.02);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.4rem;
-            font-weight: 200;
-            color: #a67e8a;
+            font-size: 2.6rem;
+            font-weight: 300;
+            color: #4a80aa;
         }
-
         .product-title {
             font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            color: #201b1d;
+            color: #1b4c6e;
+        }
+        .product-meta {
+            font-size: 0.85rem;
+            color: #5c7f9a;
+            margin-bottom: 12px;
+            font-weight: 400;
         }
 
-        /* три оптовые цены в строке */
-        .price-tiers {
+        /* ЦЕНЫ В СТОЛБИК (вертикальное расположение) */
+        .price-tiers-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: #f2f9ff;
+            padding: 12px 12px;
+            border-radius: 20px;
+            border: 1px solid #d9eaf9;
+            margin-top: 6px;
+        }
+        .tier-item {
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: #4f3d43;
-            text-transform: uppercase;
-            background: #faf3f5;
-            padding: 6px 8px;
-            border: 1px solid #efdbe2;
-            margin-top: 4px;
+            align-items: baseline;
+            border-bottom: 1px dashed #cde0ef;
+            padding-bottom: 6px;
+            font-size: 0.9rem;
         }
-        .tier span { font-weight: 500; color: #1f181b; margin-left: 3px; }
+        .tier-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .tier-label {
+            font-weight: 450;
+            color: #2a658b;
+            letter-spacing: 0.3px;
+        }
+        .tier-price {
+            font-weight: 600;
+            color: #1c5c89;
+            background: #ffffffb3;
+            padding: 0 6px;
+            border-radius: 20px;
+        }
+        body.dark .tier-price {
+            background: #1a2d42;
+            color: #cce7ff;
+        }
+        body.dark .price-tiers-vertical {
+            background: #0f1a2c;
+            border-color: #2f5378;
+        }
+        body.dark .tier-label {
+            color: #aac9ec;
+        }
 
-        /* ----- таблицы DTF (три таблицы из документа) ----- */
-        .services-section { margin: 42px 0 30px; }
-        .table-group { display: flex; flex-direction: column; gap: 30px; }
-
+        /* блоки с таблицами – аккуратные "окна" */
+        .card-table-wrapper {
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid #deecf7;
+            padding: 18px 20px 22px;
+            margin-bottom: 28px;
+            transition: all 0.2s;
+            box-shadow: 0 5px 12px rgba(60, 110, 140, 0.05);
+        }
+        body.dark .card-table-wrapper {
+            background: #0f1728;
+            border-color: #2f4c70;
+        }
+        .services-section {
+            margin: 42px 0 20px;
+        }
+        .table-group {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
         .price-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
         .price-table th {
             text-align: left;
-            padding: 14px 10px 8px 10px;
-            font-weight: 500;
+            padding: 12px 8px 8px 8px;
+            font-weight: 550;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1.5px solid #ebd3db;
-            color: #2f2328;
+            letter-spacing: 0.6px;
+            border-bottom: 2px solid #cde2f2;
+            color: #205e8c;
         }
         .price-table td {
-            padding: 14px 10px;
-            border-bottom: 1px solid #f0dfe5;
-            font-weight: 380;
+            padding: 12px 8px;
+            border-bottom: 1px solid #e1effa;
+            font-weight: 400;
         }
-        .price-table tr:last-child td { border-bottom: none; }
         .table-caption {
             font-size: 1.2rem;
-            font-weight: 400;
-            margin: 24px 0 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #4e3a41;
+            font-weight: 500;
+            margin-bottom: 14px;
+            letter-spacing: -0.2px;
+            color: #236b9b;
+            padding-left: 6px;
+            border-left: 4px solid #69a9d4;
+            padding-left: 12px;
         }
-
         .highlight-note {
-            margin-top: 18px;
-            font-size: 1rem;
-            padding: 10px 24px;
-            border: 1px solid #edd8e0;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            padding: 12px 24px;
+            border-radius: 40px;
+            border: 1px solid #cde2f5;
+            background: #f6fcff;
             display: inline-block;
-            background: #fdfafb;
+            font-weight: 450;
         }
 
-        /* примеры 10 шт 1:1 */
+        /* Примеры 10 штук 1:1 (окна) */
         .examples-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -266,26 +426,30 @@
         }
         .example-square {
             aspect-ratio: 1/1;
-            background: #fcf7f9;
-            border: 1px solid #f1dee4;
-            box-shadow: inset 0 0 0 1px #fae9ee, 0 1px 0 #e2ced4;
+            background: #fbfeff;
+            border-radius: 20px;
+            border: 1px solid #d8eaf8;
+            box-shadow: 0 2px 8px rgba(60, 100, 140, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            color: #aa8894;
-            transition: box-shadow 0.2s;
+            font-size: 2rem;
+            color: #558bb5;
+            transition: all 0.2s;
         }
         .example-square:hover {
-            box-shadow: 0 2px 0 #dbbcce, 0 12px 20px -12px #b38f9a;
+            box-shadow: 0 8px 18px -8px #8ab3d0;
+            transform: scale(1.02);
+            border-color: #99c0e2;
         }
 
-        /* контакты и адрес — компактнее */
+        /* контакты */
         .contact-block {
             margin: 32px 0 16px;
             padding: 18px 24px;
-            border: 1px solid #f0dde3;
-            background: #fefcfc;
+            border-radius: 32px;
+            border: 1px solid #ddecf9;
+            background: #fdfeff;
         }
         .contact-row {
             display: flex;
@@ -294,153 +458,151 @@
             align-items: baseline;
         }
         .contact-item {
-            font-size: 1.1rem;
-            font-weight: 420;
+            font-size: 1.05rem;
+            font-weight: 520;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            border-bottom: 1px solid #e6ced7;
-            padding-bottom: 4px;
+            letter-spacing: 0.8px;
+            border-bottom: 1.5px solid #c7def2;
+            padding-bottom: 5px;
         }
         .address {
             margin-top: 18px;
-            font-size: 0.95rem;
-            font-weight: 380;
+            font-size: 0.9rem;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #4a3a3f;
-            border-top: 1px solid #ecdae1;
+            letter-spacing: 1px;
+            color: #386f96;
+            border-top: 1px solid #d6e6f5;
             padding-top: 14px;
         }
-
         .footer-note {
             margin-top: 18px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-align: right;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #af919c;
+            color: #6d93b3;
         }
 
-        /* адаптив */
+        /* адаптивность */
         @media (max-width: 1000px) { .product-grid { grid-template-columns: repeat(3,1fr); } }
         @media (max-width: 700px) { 
             .product-grid { grid-template-columns: repeat(2,1fr); } 
             .examples-grid { grid-template-columns: repeat(3,1fr); }
         }
         @media (max-width: 500px) {
-            .header { flex-direction: column; align-items: stretch; }
+            .header { flex-direction: column; align-items: stretch; gap: 12px; border-radius: 32px; }
+            .header-actions { justify-content: flex-end; }
             .product-grid { grid-template-columns: 1fr; }
             .examples-grid { grid-template-columns: repeat(2,1fr); }
         }
-
-        /* темная тема (ручной переключатель не обязателен, но учтён) */
-        .theme-toggle { display: none; }
     </style>
 </head>
 <body>
 <div class="page">
 
-    <!-- шапка -->
+    <!-- шапка + кнопка переключения тёмной темы -->
     <div class="header">
         <div class="logo">PMR BLVNK <span>/</span> Шопперы Оптом</div>
         <div class="header-actions">
             <div class="premium-btn">+7 ··· ··· ·· ··</div>
             <div class="premium-btn">@telegram</div>
+            <button class="theme-switch-btn" id="darkModeToggle" aria-label="Тёмная тема">🌙</button>
         </div>
     </div>
 
-    <!-- hero меньше -->
+    <!-- hero с голубым акцентом -->
     <div class="hero-premium"></div>
 
-    <!-- 7 окон 3:4 (вертикальные) с тремя ценами -->
+    <!-- 7 шопперов (вертикальные карточки 3:4) с ЦЕНАМИ В СТОЛБИК -->
     <h2>Шопперы · база</h2>
     <div class="product-grid">
-        <!-- 1 -->
+        <!-- 1. Бежевый Саржа -->
         <div class="product-card">
             <div class="product-image">▣</div>
             <div class="product-title">Бежевый / Саржа</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | 140 г/м²</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">185 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">165 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">145 ₽</span></div>
             </div>
         </div>
-        <!-- 2 -->
+        <!-- 2. Белый Саржа -->
         <div class="product-card">
             <div class="product-image">□</div>
             <div class="product-title">Белый / Саржа</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | 140 г/м²</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">175 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">155 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">135 ₽</span></div>
             </div>
         </div>
-        <!-- 3 -->
+        <!-- 3. Черный Саржа -->
         <div class="product-card">
             <div class="product-image">■</div>
             <div class="product-title">Черный / Саржа</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | 150 г/м²</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">190 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">170 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">150 ₽</span></div>
             </div>
         </div>
-        <!-- 4 -->
+        <!-- 4. Синий Саржа -->
         <div class="product-card">
             <div class="product-image">◨</div>
             <div class="product-title">Синий / Саржа</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | плотный</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">195 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">172 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">152 ₽</span></div>
             </div>
         </div>
-        <!-- 5 -->
+        <!-- 5. Темно-синий Саржа -->
         <div class="product-card">
             <div class="product-image">◪</div>
             <div class="product-title">Темно-синий / Саржа</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | премиум</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">200 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">178 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">158 ₽</span></div>
             </div>
         </div>
-        <!-- 6 -->
+        <!-- 6. Серый Двунитка -->
         <div class="product-card">
             <div class="product-image">◫</div>
             <div class="product-title">Серый Двунитка</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | усиленный</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">210 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">188 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">168 ₽</span></div>
             </div>
         </div>
-        <!-- 7 -->
+        <!-- 7. Бежевый Диагональ -->
         <div class="product-card">
             <div class="product-image">⬚</div>
             <div class="product-title">Бежевый Диагональ</div>
-            <div class="product-meta" style="font-size:0.9rem; margin-bottom:6px;">40×34 см</div>
-            <div class="price-tiers">
-                <div class="tier">1-300 <span>⋯</span></div>
-                <div class="tier">300-500 <span>⋯</span></div>
-                <div class="tier">500-1000 <span>⋯</span></div>
+            <div class="product-meta">40×34 см | премиум ткань</div>
+            <div class="price-tiers-vertical">
+                <div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">205 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">182 ₽</span></div>
+                <div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">162 ₽</span></div>
             </div>
         </div>
     </div>
 
-    <!-- ТРИ ТАБЛИЦЫ DTF (по документу) -->
+    <!-- ТРИ ТАБЛИЦЫ DTF в отдельных "окнах" -->
     <div class="services-section">
         <h2>DTF печать / брендирование</h2>
         <div class="table-group">
-            <!-- Таблица 1: нанесение на носителе заказчика -->
-            <div>
-                <div class="table-caption">Нанесение DTF (на носителе заказчика)</div>
+            <!-- Таблица 1: Нанесение DTF на носителе заказчика (окно) -->
+            <div class="card-table-wrapper">
+                <div class="table-caption">📄 Нанесение DTF (на носителе заказчика)</div>
                 <table class="price-table">
                     <thead><tr><th>Размер</th><th>1–300 шт</th><th>300–500 шт</th><th>500–1000 шт</th></tr></thead>
                     <tbody>
@@ -453,9 +615,10 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Таблица 2: DTF рулоны оптом -->
-            <div>
-                <div class="table-caption">DTF-рулоны (термотрансферы оптом)</div>
+
+            <!-- Таблица 2: DTF рулоны оптом (окно) -->
+            <div class="card-table-wrapper">
+                <div class="table-caption">📜 DTF-рулоны (термотрансферы оптом)</div>
                 <table class="price-table">
                     <thead><tr><th>Объём</th><th>1–50 м</th><th>51–100 м</th><th>101–200 м</th><th>от 201 м</th></tr></thead>
                     <tbody>
@@ -463,9 +626,10 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Таблица 3: услуга переноса -->
-            <div>
-                <div class="table-caption">Перенос DTF печати</div>
+
+            <!-- Таблица 3: Перенос DTF печати (окно) -->
+            <div class="card-table-wrapper">
+                <div class="table-caption">🔄 Перенос DTF печати</div>
                 <table class="price-table">
                     <thead><tr><th>Тип переноса</th><th>1–300</th><th>300–500</th><th>500–1000</th><th>от 1000</th></tr></thead>
                     <tbody>
@@ -475,7 +639,7 @@
                 </table>
             </div>
         </div>
-        <div class="highlight-note">DTF рулон от 201 м — 550 ₽/м + бесплатная доставка</div>
+        <div class="highlight-note">✨ DTF рулон от 201 м — 550 ₽/м + бесплатная доставка по РФ</div>
     </div>
 
     <!-- 10 окон примеров 1:1 -->
@@ -487,30 +651,72 @@
         <div class="example-square">◨</div>
     </div>
 
-    <!-- контакты + адрес (компактно) -->
+    <!-- контакты + адрес -->
     <div class="contact-block">
         <div class="contact-row">
-            <div class="contact-item">+7 ··· ··· ·· ··</div>
-            <div class="contact-item">@telegram</div>
+            <div class="contact-item">+7 900 000 00 00</div>
+            <div class="contact-item">@pmr_blvnk_wholesale</div>
         </div>
-        <div class="address">адрес предприятия · город, улица, строение</div>
+        <div class="address">адрес предприятия · г. Москва, Пресненская наб., стр. 8 · шоурум по предварительной записи</div>
     </div>
-    <div class="footer-note">PMR BLVNK · premium wholesale</div>
+    <div class="footer-note">PMR BLVNK · премиум оптовый отдел | все цены указаны с учётом НДС</div>
 </div>
 
-<!-- скрипт для ручного переключения тёмной темы (опционально) -->
+<!-- скрипт для ручного переключения тёмной/светлой темы + автоопределение -->
 <script>
     (function() {
-        // Просто для удобства: если нужно протестировать тёмную тему вручную, 
-        // можно добавить класс dark к body. Оставил возможность.
+        // определяем, была ли сохранена тема в localStorage
+        const storedTheme = localStorage.getItem('pmr_theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-            document.body.classList.add('dark');
+        let isDark = false;
+
+        if (storedTheme === 'dark') {
+            isDark = true;
+        } else if (storedTheme === 'light') {
+            isDark = false;
+        } else {
+            isDark = prefersDark;
         }
-        // слушатель на изменение темы
+
+        if (isDark) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+
+        const toggleBtn = document.getElementById('darkModeToggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                if (document.body.classList.contains('dark')) {
+                    document.body.classList.remove('dark');
+                    localStorage.setItem('pmr_theme', 'light');
+                    toggleBtn.textContent = '🌙';
+                } else {
+                    document.body.classList.add('dark');
+                    localStorage.setItem('pmr_theme', 'dark');
+                    toggleBtn.textContent = '☀️';
+                }
+            });
+            // иконка в соответствии с текущим состоянием
+            if (document.body.classList.contains('dark')) {
+                toggleBtn.textContent = '☀️';
+            } else {
+                toggleBtn.textContent = '🌙';
+            }
+        }
+
+        // слушатель системной темы, если пользователь явно не выбрал ручную
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if (e.matches) document.body.classList.add('dark');
-            else document.body.classList.remove('dark');
+            const manual = localStorage.getItem('pmr_theme');
+            if (!manual) {
+                if (e.matches) {
+                    document.body.classList.add('dark');
+                    if(toggleBtn) toggleBtn.textContent = '☀️';
+                } else {
+                    document.body.classList.remove('dark');
+                    if(toggleBtn) toggleBtn.textContent = '🌙';
+                }
+            }
         });
     })();
 </script>
